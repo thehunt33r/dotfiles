@@ -1,2 +1,2 @@
-[dotrix.link]
-"/usr/bin/py3lock" = "py3lock"
+[dotrix]
+ignore = [ "py3lock", "install_py3lock.sh" ]
