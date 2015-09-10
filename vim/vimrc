@@ -1,13 +1,42 @@
-set shell=bash
-set runtimepath+=~/.vim_runtime
+set shell=zsh
 
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
-set noshowmode
-try
-source ~/.vim_runtime/my_configs.vim
-catch
-endtry
 
+" Keymaps
+map <C-n> :NERDTreeToggle<CR>
+
+call plug#begin()
+
+" Language specific
+Plug 'chase/vim-ansible-yaml'
+Plug 'sudar/vim-arduino-syntax'
+Plug 'plasticboy/vim-markdown'
+Plug 'scrooloose/syntastic'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'fatih/vim-go'
+Plug 'michaeljsmith/vim-indent-object'
+
+" Colorscheme
+Plug 'junegunn/seoul256.vim'
+
+"Else
+Plug 'junegunn/vim-easy-align'
+Plug 'Valloric/YouCompleteMe'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on' : 'NERDTreeToggle'}
+Plug 'jiangmiao/auto-pairs'
+Plug 'chrisbra/Colorizer'
+Plug 'junegunn/goyo.vim'
+Plug 'amix/open_file_under_cursor.vim'
+Plug 'KabbAmine/vCoolor.vim'
+Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sensible'
+
+call plug#end()
+
+colorscheme seoul256

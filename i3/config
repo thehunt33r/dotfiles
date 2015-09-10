@@ -163,9 +163,21 @@ bindsym XF86AudioPrev exec playerctl previous
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
         position top
-        font Terminus
+        status_command i3blocks
+        font pango:Fira Code 10, FontAwesome 8
+        strip_workspace_numbers yes
+        colors {
+                background #2b2b2b
+                statusline #c0c0c0
+                separator  #aa7030
+
+                #color class       border  back.   text
+                focused_workspace  #ff7030 #ff7030 #ffffff
+                active_workspace   #555555 #555555 #ffffff
+                inactive_workspace #2b2b2b #2b2b2b #aaaaaa
+                urgent_workspace   #2f343a #900000 #ffffff
+        }
 }
 exec --no-startup-id nitrogen --restore
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -191,6 +203,7 @@ new_window 1pixel
 # exec necessary programs : skype, nm-applet,etc...
 exec skype
 exec nm-applet
+exec --no-startup-id rofi -key-run alt+shift+d -key-ssh alt+shift+s -key-window alt+shift+w -terminal urxvt
 exec /usr/libexec/gnome-settings-daemon
 exec dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec --no-startup-id redshift || redshift -l 48.11,-1.67
