@@ -1,5 +1,5 @@
 set shell=zsh
-
+set number
 
 " Keymaps
 map <C-n> :NERDTreeToggle<CR>
@@ -7,17 +7,19 @@ map <C-n> :NERDTreeToggle<CR>
 call plug#begin()
 
 " Language specific
-Plug 'chase/vim-ansible-yaml'
+Plug 'pearofducks/ansible-vim'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/syntastic'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'fatih/vim-go'
 Plug 'michaeljsmith/vim-indent-object'
-
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview'
 " Colorscheme
 Plug 'junegunn/seoul256.vim'
-
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16'
 "Else
 Plug 'junegunn/vim-easy-align'
 Plug 'Valloric/YouCompleteMe'
