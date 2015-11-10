@@ -2,7 +2,7 @@ set shell=zsh
 set number
 
 " Keymaps
-map <C-n> :NERDTreeToggle<CR>
+map <C-p> :NERDTreeToggle<CR>
 
 call plug#begin()
 
@@ -20,6 +20,7 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'junegunn/seoul256.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16'
+Plug 'morhetz/gruvbox'
 "Else
 Plug 'junegunn/vim-easy-align'
 Plug 'Valloric/YouCompleteMe'
@@ -42,3 +43,5 @@ Plug 'tpope/vim-sensible'
 call plug#end()
 
 colorscheme seoul256
+
+nnoremap <F4> :NERDTreeToggle <cr>
