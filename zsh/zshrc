@@ -89,8 +89,5 @@ alias promiscuous_mode="sudo chmod a+rw /dev/vmnet*"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export CLOUDSDK_PYTHON="python2"
 # The next line updates PATH for the Google Cloud SDK.
-source '/home/rick/google-cloud-sdk/path.zsh.inc'
 
 # The next line enables shell command completion for gcloud.
-source '/home/rick/google-cloud-sdk/completion.zsh.inc'
-source '/home/rick/.aws'
