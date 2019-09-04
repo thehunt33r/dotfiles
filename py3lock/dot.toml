@@ -1,2 +1,0 @@
-[dotrix]
-ignore = [ "py3lock", "install_py3lock.sh" ]
