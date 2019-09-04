@@ -1,8 +1,6 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = Matthieu Antoine
-	email = matthieu.antoine@n26.com
+	email = matthieu@matthieu-antoine.me
 	signingkey = D1CDC25385A36BC977B078F13DE12AB9A580A5DA
 [commit]
 	gpgsign = true
