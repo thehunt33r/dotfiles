@@ -1,29 +1,32 @@
-set shell=zsh
+set shell=fish
 set number
 
 " Keymaps
-map <C-p> :NERDTreeToggle<CR>
-
+" map <C-p> :NERDTreeToggle<CR>
+"
 call plug#begin()
 
 " Language specific
+Plug 'w0rp/ale'
 Plug 'pearofducks/ansible-vim'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/syntastic'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'fatih/vim-go'
+Plug 'fatih/vim-hclfmt'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview'
+Plug 'saltstack/salt-vim'
+Plug 'vim-python/python-syntax'
+Plug 'ambv/black'
 " Colorscheme
 Plug 'junegunn/seoul256.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16'
 Plug 'morhetz/gruvbox'
-"Else
+" Else
 Plug 'junegunn/vim-easy-align'
-Plug 'Valloric/YouCompleteMe'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on' : 'NERDTreeToggle'}
@@ -44,4 +47,12 @@ call plug#end()
 
 colorscheme seoul256
 
+" Configure Python Syntax
+let g:python_highlight_all = 1
+let g:python_highlight_file_headers_as_comment = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+autocmd BufWritePre *.py execute ':Black'
 nnoremap <F4> :NERDTreeToggle <cr>
