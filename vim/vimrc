@@ -1,6 +1,23 @@
 set shell=fish
 set number
 
+" Install plug if it doesn't exist
+if empty(glob('~/.vim/autoload/plug.vim'))
+    let plugVersion = '0.10.0'
+    let plugChecksum = 'c91f91c7e56578ab7331c784b4bc764eccef774f'
+
+    let plugDownloadUrl = 'https://raw.githubusercontent.com/junegunn/vim-plug/' . plugVersion . '/plug.vim'
+    let remoteChecksum = systemlist('curl -s ' . plugDownloadUrl . ' | shasum | awk ''{print $1}''')[0]
+
+    if remoteChecksum != plugChecksum
+        echoerr 'Plug installation failed, checksums don''t match!'
+    else
+        echo 'Downloading plug...'
+        silent execute '!curl -sfLo ~/.vim/autoload/plug.vim --create-dirs' plugDownloadUrl
+        autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+    endif
+endif
+
 " Keymaps
 " map <C-p> :NERDTreeToggle<CR>
 "
