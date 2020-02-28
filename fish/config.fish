@@ -22,5 +22,7 @@ set -x LC_CTYPE en_US.UTF-8
 
 set -g theme_display_date no
 
+set fish_user_paths $PATH /Users/matthieu/Documents/env /Users/matthieu/go/bin
+
 eval (python -m virtualfish)
 set fish_greeting ""

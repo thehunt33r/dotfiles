@@ -1,12 +1,13 @@
 [user]
 	name = Matthieu Antoine
-	email = matthieu@matthieu-antoine.me
+	email = matthieu.antoine@jumo.world
 	signingkey = D1CDC25385A36BC977B078F13DE12AB9A580A5DA
 [commit]
 	gpgsign = true
 [core]
         pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = vim
+	excludesfile = /Users/matthieu/.gitignore
 [alias]
 	logs = log --show-signature
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
